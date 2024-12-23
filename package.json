@@ -1,0 +1,22 @@
+{
+  "name": "next-multizone-apps",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:main\" \"npm run dev:shop\" \"npm run dev:admin\"",
+    "dev:main": "npm run dev --workspace=main-app",
+    "dev:shop": "npm run dev --workspace=shop-app",
+    "dev:admin": "npm run dev --workspace=admin-app",
+    "build": "npm run build --workspaces",
+    "start": "concurrently \"npm run start:main\" \"npm run start:shop\" \"npm run start:admin\"",
+    "start:main": "npm run start --workspace=main-app",
+    "start:shop": "npm run start --workspace=shop-app",
+    "start:admin": "npm run start --workspace=admin-app"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+} 
